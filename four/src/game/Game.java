@@ -11,6 +11,11 @@ public class Game extends Observable {
 	private List<Player> players = new ArrayList<Player>();
 	private int          turn    = 0;
 	
+	void addPlayer(Player player) 
+	{ 
+		players.add(player); 
+	}
+	
 	public int          getTurn() { return turn; }
 	public Board        getBoard() { return board; }
 	public List<Player> getPlayers() { return players; }

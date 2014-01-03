@@ -1,40 +1,51 @@
 package game;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.ArrayList;
+import util.Pair;
 
 public final class Board implements Serializable {
-	/**
-	 * 
-	 */
+	
+	// private fields
 	private static final long serialVersionUID = 1L;
-	private List<List<Disc>> matrix;
-	private int              heightLimit;
-	private int              winnerID = -1;
-	private int              lastMove = -1;
+	public final int ROWS = 6;
+	public final int COLS = 7;
+	private ArrayList<ArrayList<Disc>> matrix = new ArrayList<ArrayList<Disc>>();
+	private int winnerID = -1;
+	private Pair<Disc, Integer> lastMove = new Pair<Disc,Integer>(null, -1);
 
-	public List<List<Disc>> getMatrix()   { return matrix; }
-	public int              getWinnerID() { return winnerID; }
-	public int              getLastMove() { return lastMove; }
-	public Boolean          isFinished()  { return false; /* stub */ }
-	public Boolean 			checkWinConditions()
+	// public methods
+	public ArrayList<ArrayList<Disc>> getMatrix()   { return matrix; }
+	public Pair<Disc, Integer> getLastMove() { return lastMove; }
+	public int     getWinnerID() { return winnerID; }
+	public Boolean isFinished()  { return false; /* stub */ }
+	
+	public Board() 
+	{
+		// int matrix arrays
+		for (int i = 0; i < ROWS; ++i)
+			matrix.add(new ArrayList<Disc>(COLS));
+	}
+	
+	public Boolean checkWinConditions()
 	{
 		/* check */
 		return false;
 	}
-	Boolean                 addDisc(int row, Disc disc) 
+	Boolean addDisc(int row, Disc disc) 
 	{
 		if (row >= matrix.size())
 			return false;
 
-		if (matrix.get(row).size() >= heightLimit)
+		if (matrix.get(row).size() >= COLS)
 			return false;
 
 		if (!matrix.get(row).add(disc))
 			return false;
 
-		lastMove = row;
+		lastMove.first  = disc;
+		lastMove.second = row;
+		
 		return true;
 	}
-	
 }
