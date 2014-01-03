@@ -1,6 +1,12 @@
-package four;
+package game;
 
-public final class Disc {
+import java.io.Serializable;
+
+public final class Disc implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int playerID;
 	public int  getPlayerID() { return playerID; }
 	public void setPlayerID(int id) { playerID = id; }

@@ -1,4 +1,4 @@
-package four;
+package player;
 
 public final class Player {
 	private int id;
