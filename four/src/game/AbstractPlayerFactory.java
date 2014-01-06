@@ -3,10 +3,19 @@ import player.Player;
 
 public class AbstractPlayerFactory {
 	private PlayerFactory playerFactory;
-	public void setPlayerFactory(PlayerFactory pf) { playerFactory = pf; }
+	private int numOfPlayersToCreate = 2;
+	public void setPlayerFactory(PlayerFactory pf, int num) 
+	{ 
+		playerFactory = pf; 
+		if (num > 0)
+			numOfPlayersToCreate = num;
+	}
 
-	Player getNewPlayer()
+	Player[] getNewPlayers()
 	{
-		return playerFactory.getNewPlayer();
+		Player[] players = new Player[numOfPlayersToCreate];
+		for (int i = 0; i < numOfPlayersToCreate; ++i)
+			players[i] = playerFactory.getNewPlayer();
+		return players;
 	}
 }

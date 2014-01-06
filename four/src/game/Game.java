@@ -1,39 +1,39 @@
 package game;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Observable;
 
 import player.Player;
 
-public class Game extends Observable {
-	private Board        board;
-	private List<Player> players = new ArrayList<Player>();
-	private int          turn    = 0;
+public class Game extends Observable 
+{
+	private Board    board;
+	private Player[] players;
+	private int      turn    = 0;
 	
-	void addPlayer(Player player) 
+	void addPlayers(Player[] players) 
 	{ 
-		players.add(player); 
+		this.players = players; 
 	}
-	
-	public int          getTurn() { return turn; }
-	public Board        getBoard() { return board; }
-	public List<Player> getPlayers() { return players; }
-	Boolean             makeMove() 
+	public boolean  isFinished() { return board.isFinished(); }
+	public int      getTurn() { return turn; }
+	public Board    getBoard() { return board; }
+	public Player[] getPlayers() { return players; }
+	void            makeMove() throws Exception 
 	{ 
-		if (turn > players.size())
-			return false; // throw exception
+		if (turn > players.length)
+			turn = 0;
+		
+		if (isFinished())
+			throw new Exception("game is already finished");
 		
 		// try to add until success
-		while (!board.addDisc(players.get(turn).makeMove(), DiscFactory.getInstance().getDisc(players.get(turn).getID())));
+		while (!board.addDisc(players[turn].makeMove(), DiscFactory.getInstance().getDisc(players[turn].getID())));
 		board.checkWinConditions();
 		++turn;
-		if (turn >= players.size()) // turn around
+		if (turn >= players.length) // turn around
 			turn = 0;
 		
 	    setChanged();
 	    notifyObservers(board);
-		
-		return true; 
 	}
 }

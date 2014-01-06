@@ -1,6 +1,5 @@
 package player;
 
-import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -14,7 +13,7 @@ public abstract class View implements Observer {
 		print();
 	}
 	public abstract void print();
-	public ArrayList<ArrayList<Disc>> getMatrix() {
+	public Disc[][] getMatrix() {
 		return game.getBoard().getMatrix();
 	}
 }

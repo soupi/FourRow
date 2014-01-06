@@ -11,6 +11,6 @@ public final class Disc implements Serializable {
 	public int  getPlayerID() { return playerID; }
 	public void setPlayerID(int id) { playerID = id; }
 	
-	public      Disc() { }
+	public      Disc() { setPlayerID(-1); }
 	public      Disc(int id) { setPlayerID(id); }
 }
