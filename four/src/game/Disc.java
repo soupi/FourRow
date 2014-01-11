@@ -7,10 +7,8 @@ public final class Disc implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	int playerID;
+	private final int playerID;
 	public int  getPlayerID() { return playerID; }
-	public void setPlayerID(int id) { playerID = id; }
-	
-	public      Disc() { setPlayerID(-1); }
-	public      Disc(int id) { setPlayerID(id); }
+	public      Disc(int id) { playerID = id; }
+	public String toString() { return String.valueOf(playerID); }
 }

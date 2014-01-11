@@ -11,4 +11,5 @@ public final class Player {
 	public int  getID()       { return id; }
 	public void setID(int id) { this.id = id; }
 	public int  makeMove()    { return strategy.makeMove(id, view.getMatrix()); }
+	public String toString() { return String.valueOf(id); }
 }

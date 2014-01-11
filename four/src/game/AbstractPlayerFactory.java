@@ -15,7 +15,10 @@ public class AbstractPlayerFactory {
 	{
 		Player[] players = new Player[numOfPlayersToCreate];
 		for (int i = 0; i < numOfPlayersToCreate; ++i)
+		{
 			players[i] = playerFactory.getNewPlayer();
+			players[i].setID(i);
+		}
 		return players;
 	}
 }
