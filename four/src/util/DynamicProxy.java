@@ -39,7 +39,9 @@ public class DynamicProxy implements InvocationHandler {
         } catch (Exception e) {
             throw new RuntimeException("unexpected invocation exception: " +
                                        e.getMessage());
-        } 
+        }
+        writer.println("result: " + result);
+        writer.flush();
         return result;
     }
     public void log(Object proxy, Method m, Object[] args)
@@ -55,7 +57,6 @@ public class DynamicProxy implements InvocationHandler {
 	        for (Object obj : args)
 	        {
 	        	writer.println("+ " + obj.getClass().getName() + " : " + obj.toString() );
-	        	
 	        }
         }
         writer.flush();
