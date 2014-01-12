@@ -1,5 +1,6 @@
 package game;
-import player.Player;
+import player.IPlayer;
+import util.DynamicProxy;
 
 public class AbstractPlayerFactory {
 	private PlayerFactory playerFactory;
@@ -11,12 +12,13 @@ public class AbstractPlayerFactory {
 			numOfPlayersToCreate = num;
 	}
 
-	Player[] getNewPlayers()
+	IPlayer[] getNewPlayers()
 	{
-		Player[] players = new Player[numOfPlayersToCreate];
+		IPlayer[] players = new IPlayer[numOfPlayersToCreate];
 		for (int i = 0; i < numOfPlayersToCreate; ++i)
 		{
-			players[i] = playerFactory.getNewPlayer();
+			IPlayer p = (IPlayer)DynamicProxy.newInstance(playerFactory.getNewPlayer());
+			players[i] = p;
 			players[i].setID(i);
 		}
 		return players;

@@ -2,7 +2,7 @@ package game;
 
 import java.util.Observer;
 
-import player.Player;
+import player.IPlayer;
 
 
 /**
@@ -21,12 +21,13 @@ public final class GameManager {
 	{
 		game = new Game();
 		
-		Player[] players = fact.getNewPlayers();
+		IPlayer[] players = fact.getNewPlayers();
 		game.addPlayers(players);
-		for ( Player player : players)
+		for (IPlayer player : players)
 		{
-			player.getView().setGame(game);
-			this.addViewer(player.getView());
+			player.View view = player.getView();
+			view.setGame(game);
+			this.addViewer(view);
 		}
 	}
 	

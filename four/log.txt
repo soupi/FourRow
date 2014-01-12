@@ -1,0 +1,148 @@
+==================================
+Object: player.Player
+method setID
+with args: 
++ java.lang.Integer : 0
+==================================
+Object: player.Player
+method setID
+with args: 
++ java.lang.Integer : 1
+==================================
+Object: player.Player
+method getView
+==================================
+Object: player.Player
+method getView
+==================================
+Object: player.Player
+method makeMove
+==================================
+Object: player.Player
+method getID
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method makeMove
+==================================
+Object: player.Player
+method getID
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method makeMove
+==================================
+Object: player.Player
+method getID
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method makeMove
+==================================
+Object: player.Player
+method getID
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method makeMove
+==================================
+Object: player.Player
+method getID
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method makeMove
+==================================
+Object: player.Player
+method getID
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method makeMove
+==================================
+Object: player.Player
+method getID
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method makeMove
+==================================
+Object: player.Player
+method getID
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method makeMove
+==================================
+Object: player.Player
+method getID
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method makeMove
+==================================
+Object: player.Player
+method getID
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method makeMove
+==================================
+Object: player.Player
+method getID
+==================================
+Object: player.Player
+method toString
+==================================
+Object: player.Player
+method toString

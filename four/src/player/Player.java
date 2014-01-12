@@ -1,6 +1,6 @@
 package player;
 
-public final class Player {
+public final class Player implements IPlayer {
 	private int id;
 	IPlayerStrategy strategy;
 	View            view;

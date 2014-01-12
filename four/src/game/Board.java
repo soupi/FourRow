@@ -63,6 +63,11 @@ public final class Board implements Serializable {
 		return true;
 	}
 
+	/**
+	 * Thank the lord I didn't have to write that.
+	 * @param move
+	 * @return
+	 */
 	public boolean checkWinConditions(Pair<Disc, Integer> move)
 	{
 		int count = 1;
