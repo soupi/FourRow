@@ -28,7 +28,7 @@ public class Game extends Observable
 			this.players.add(player);
 	}
 	public Queue<Player> getPlayers() { return players; }
-	
+	public int      getWinner() { return board.getWinnerID(); }
 	public boolean  isFinished() { return board.isFinished(); }
 	public Board    getBoard() { return board; }
 	void            makeMove() throws Exception 
@@ -43,7 +43,7 @@ public class Game extends Observable
 		while (!board.addDisc(currPlayer.makeMove(), DiscFactory.getInstance().getDisc(currPlayer.getID())));
 		players.add(currPlayer);
 		
-		board.checkWinConditions();
+		board.checkFinishConditions();
 		
 	    setChanged();
 	    notifyObservers(board);

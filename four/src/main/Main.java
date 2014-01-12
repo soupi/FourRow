@@ -11,7 +11,11 @@ public class Main {
 		
 		GameManager gMan = new GameManager(aFactory);
 
-		gMan.loop();
+		int winner = gMan.loop();
+		if (winner == -1)
+			System.out.println("draw.");
+		else 
+			System.out.println("player number " + winner + " won.");
 		
 		System.out.println("game over.");
 	}

@@ -51,9 +51,20 @@ public final class GameManager {
 	/**
 	 * loops through the game until it is finished
 	 */
-	public void loop() {
+	public int loop() {
 		while (!game.isFinished())
 			try { game.makeMove(); }
 			catch (Exception e) { System.err.println("error while calling game.makeMove(): " + e.toString()); break; }
+		
+		/* -------- */
+		Disc[][] b = game.getBoard().getMatrix();
+		for (Disc[] discs : b)
+		{
+			for (Disc disc : discs)
+				System.out.print(disc + " ");
+			System.out.println("");
+		}
+		/* ---------*/
+		return game.getWinner();
 	}
 }
