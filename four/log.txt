@@ -1,0 +1,292 @@
+==================================
+Object: player.Player
+method setID
+with args: 
++ java.lang.Integer : 0
+result: null
+==================================
+Object: player.Player
+method setID
+with args: 
++ java.lang.Integer : 1
+result: null
+==================================
+Object: player.Player
+method getView
+result: player.PlayersViewDecorator@5b787144
+==================================
+Object: player.Player
+method getView
+result: player.PlayersViewDecorator@40545646
+==================================
+Object: player.Player
+method makeMove
+result: 1
+==================================
+Object: player.Player
+method getID
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method makeMove
+result: 2
+==================================
+Object: player.Player
+method getID
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method makeMove
+result: 5
+==================================
+Object: player.Player
+method getID
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method makeMove
+result: 4
+==================================
+Object: player.Player
+method getID
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method makeMove
+result: 5
+==================================
+Object: player.Player
+method getID
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method makeMove
+result: 0
+==================================
+Object: player.Player
+method getID
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method makeMove
+result: 4
+==================================
+Object: player.Player
+method getID
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method makeMove
+result: 5
+==================================
+Object: player.Player
+method getID
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method makeMove
+result: 1
+==================================
+Object: player.Player
+method getID
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method makeMove
+result: 1
+==================================
+Object: player.Player
+method getID
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method makeMove
+result: 4
+==================================
+Object: player.Player
+method getID
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method makeMove
+result: 2
+==================================
+Object: player.Player
+method getID
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method makeMove
+result: 4
+==================================
+Object: player.Player
+method getID
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method makeMove
+result: 1
+==================================
+Object: player.Player
+method getID
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method makeMove
+result: 1
+==================================
+Object: player.Player
+method getID
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method makeMove
+result: 1
+==================================
+Object: player.Player
+method getID
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 0
+==================================
+Object: player.Player
+method makeMove
+result: 4
+==================================
+Object: player.Player
+method getID
+result: 0
+==================================
+Object: player.Player
+method toString
+result: 1
+==================================
+Object: player.Player
+method toString
+result: 1
