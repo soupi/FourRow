@@ -1,6 +1,7 @@
 package game;
 
 import java.io.Serializable;
+
 import util.Pair;
 
 public final class Board implements Serializable {
@@ -14,13 +15,21 @@ public final class Board implements Serializable {
 	private Disc[][] matrix = new Disc[ROWS][COLS];
 	private Pair<Disc, Integer> lastMove = new Pair<Disc,Integer>(null, -1);
 	private BoardLogic logic;
-	// public methods
 	
+	private int getNextEmptyCol(int row)
+	{
+		for (int i = 0; i < matrix[row].length; ++i)
+			if (matrix[row][i] == null)
+				return i;
+		return -1;
+	}
+	
+	// public methods
 	public Board(BoardLogic logic) { this.logic = logic; }
 	public Pair<Disc, Integer> getLastMove() { return lastMove; }
 	public int     getWinnerID() { return winnerID; }
 	public boolean isFinished()  { return finished; }
-	public boolean checkFinishConditions() 
+	public boolean checkFinishConditions() throws Exception 
 	{		
 		if (!isMatrixFull())
 		{
@@ -38,13 +47,6 @@ public final class Board implements Serializable {
 				return false;
 		
 		return true;
-	}
-	public int getNextEmptyCol(int row)
-	{
-		for (int i = 0; i < matrix[row].length; ++i)
-			if (matrix[row][i] == null)
-				return i;
-		return -1;
 	}
 	boolean addDisc(int row, Disc newDisc) 
 	{
@@ -66,9 +68,17 @@ public final class Board implements Serializable {
 	{
 		return matrix[i][j];
 	}
-
-	public boolean checkWinConditions(Pair<Disc, Integer> move)
-	{
-		return logic.checkWinConditions(matrix, move);
+	public boolean checkWinConditions(Pair<Disc, Integer> move) throws Exception
+	{		
+		int row = move.second;
+		if (row < 0 || row > matrix.length)
+			return false;
+		
+		int col = COLS-1;
+		for (int i = 0; i < matrix[row].length; ++i)
+			if (matrix[row][i] == null)
+				{ col = i-1; break; }
+		
+		return logic.checkWinConditions(matrix, row, col);
 	}
 }

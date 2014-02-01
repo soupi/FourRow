@@ -26,7 +26,7 @@ public class Game extends Observable
 		for (IPlayer player : players)
 			this.players.add(player);
 	}
-	public Queue<IPlayer> getPlayers() { return players; }
+	public IPlayer[] getPlayersQueue() { return (IPlayer[]) players.toArray(); }
 	public int      getWinner() { return board.getWinnerID(); }
 	public boolean  isFinished() { return board.isFinished(); }
 	public Board    getBoard() { return board; }

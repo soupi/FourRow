@@ -1,7 +1,5 @@
 package game;
 
-import util.Pair;
-
 public interface BoardLogic {
-	boolean checkWinConditions(Disc[][] matrix, Pair<Disc, Integer> move);
+	boolean checkWinConditions(Disc[][] matrix, int moveRow, int moveCol) throws Exception;
 }

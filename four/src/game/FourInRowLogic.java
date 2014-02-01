@@ -1,7 +1,5 @@
 package game;
 
-import util.Pair;
-
 public class FourInRowLogic implements BoardLogic {
 	private final int WIN = 4;
 	
@@ -9,20 +7,21 @@ public class FourInRowLogic implements BoardLogic {
 	 * Thank the lord I didn't have to write that.
 	 * @param move
 	 * @return
+	 * @throws Exception 
 	 */
-	public boolean checkWinConditions(Disc[][] matrix, Pair<Disc, Integer> move)
+	public boolean checkWinConditions(Disc[][] matrix, int rowIndex, int colIndex) throws Exception
 	{
 		int ROWS = matrix.length;
 		int COLS = matrix[0].length;
 		
-		int count = 1;
-		int rowIndex = move.second;
-		int colIndex = 0;
-		for (int i = 0; i < matrix[rowIndex].length; ++i)
-			if (matrix[rowIndex][i] == null)
-				{ colIndex = i-1; break; }
+		if (rowIndex < 0 || ROWS <= rowIndex || colIndex < 0 || COLS <= colIndex )
+			throw new Exception("move (" + rowIndex + ", " + colIndex + ") is out of bounds");
+		if (matrix[rowIndex][colIndex] == null)
+			return false;
 		
-		int c = move.first.getPlayerID();
+		int count = 1;
+
+		int c = matrix[rowIndex][colIndex].getPlayerID();
 		
 		// horizontal right
 		for (int i=colIndex+1; i < COLS; i++) {
