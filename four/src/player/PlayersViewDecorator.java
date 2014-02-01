@@ -10,7 +10,7 @@ public class PlayersViewDecorator extends ViewDecorator {
 	
 	@Override
 	public void print() {
-	 	System.out.println("current player: " + view.getGame().getPlayersQueue()[0] + "\n");
+	 	System.out.println("current player: " + view.getGame().getPlayersQueue().peek() + "\n");
 	 	view.print();
 	}
 }

@@ -4,7 +4,9 @@ import static org.junit.Assert.*;
 import game.Board;
 import game.Game;
 
+import java.util.LinkedList;
 import java.util.Observable;
+import java.util.Queue;
 
 import org.junit.Test;
 
@@ -25,8 +27,10 @@ public class PlayersViewDecoratorTest {
 			public Game getGame() {
 				// Auto-generated method stub
 				return new game.Game() { 
-					public IPlayer[] getPlayersQueue() { 
-						return new IPlayer[] { new Player() };
+					public Queue<IPlayer> getPlayersQueue() { 
+						Queue<IPlayer> queue = new LinkedList<IPlayer>();
+						queue.add( new Player() );
+						return queue;
 					}
 				};
 			}
