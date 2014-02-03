@@ -25,7 +25,7 @@ public class PlayersViewDecoratorTest {
 			@Override
 			public Game getGame() {
 				// Auto-generated method stub
-				return new game.Game() { 
+				return new game.Game(0) { 
 					public Queue<IPlayer> getPlayersQueue() { 
 						Queue<IPlayer> queue = new LinkedList<IPlayer>();
 						queue.add( new Player() );

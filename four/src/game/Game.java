@@ -4,7 +4,9 @@ package game;
 import java.util.LinkedList;
 import java.util.Observable;
 import java.util.Queue;
+
 import player.IPlayer;
+import util.Pair;
 
 /**
  * The Game is responsible for controlling the game. it selects the current player to play and changes the board.
@@ -16,7 +18,15 @@ public class Game extends Observable
 {
 	private Board board = new Board(new FourInRowLogic());
 	private Queue<IPlayer> players = new LinkedList<IPlayer>(); 
+	private final long id;
 	
+	public Game(long id)
+	{
+		this.id = id;
+	}
+	
+	public long getID() { return id; }
+	public Pair<Disc, Integer> getLastMove() { return board.getLastMove(); }
 	/**
 	 * adds players to queue
 	 * @param players players to add
@@ -34,7 +44,6 @@ public class Game extends Observable
 			queue.add((IPlayer) array[i]);
 		
 		return queue;
-		
 	}
 	public int      getWinner() { return board.getWinnerID(); }
 	public boolean  isFinished() { return board.isFinished(); }

@@ -11,7 +11,7 @@ public class Main {
 		AbstractPlayerFactory aFactory = new AbstractPlayerFactory();
 		aFactory.setPlayerFactory(new RandomPlayerFactory(), 2);
 		
-		GameManager gMan = new GameManager(aFactory);
+		GameManager gMan = new GameManager(aFactory, 0);
 
 		int winner = gMan.loop();
 		if (winner == -1)

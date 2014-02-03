@@ -48,17 +48,20 @@ public class DynamicProxy implements InvocationHandler {
     {
     	if (!isLogFileOpen)
     		return;
-    	writer.println("==================================");
-    	writer.println("Object: " + obj.getClass().getName());
-        writer.println("method " + m.getName());
-        if (args != null)
-        {
-        	writer.println("with args: ");
-	        for (Object obj : args)
+    	synchronized (writer)
+    	{
+	    	writer.println("==================================");
+	    	writer.println("Object: " + obj.getClass().getName());
+	        writer.println("method " + m.getName());
+	        if (args != null)
 	        {
-	        	writer.println("+ " + obj.getClass().getName() + " : " + obj.toString() );
+	        	writer.println("with args: ");
+		        for (Object obj : args)
+		        {
+		        	writer.println("+ " + obj.getClass().getName() + " : " + obj.toString() );
+		        }
 	        }
-        }
-        writer.flush();
+	        writer.flush();
+	    }
     }
 }

@@ -18,9 +18,9 @@ public final class GameManager {
 	 * initializing the game. it creates new players and viewers and adds them to the game.
 	 * @param fact an AbstractPlayerFactory which will be used to create the players
 	 */
-	public GameManager(AbstractPlayerFactory fact)
+	public GameManager(AbstractPlayerFactory fact, long id)
 	{
-		game = new Game();
+		game = new Game(id);
 		
 		IPlayer[] players = fact.getNewPlayers();
 		game.addPlayers(players);
@@ -68,4 +68,6 @@ public final class GameManager {
 		/* ---------*/
 		return game.getWinner();
 	}
+	public long getID() { return game.getID(); }
+	public Board getBoard() { return game.getBoard(); }
 }
