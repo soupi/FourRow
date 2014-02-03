@@ -1,6 +1,5 @@
 package player;
 
-import static org.junit.Assert.*;
 import game.Board;
 import game.Game;
 
