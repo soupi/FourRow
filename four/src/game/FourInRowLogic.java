@@ -1,5 +1,11 @@
 package game;
 
+
+/**
+ * implements Four In A Row winning conditions board logic
+ * @author Gil Mizrahi
+ *
+ */
 public class FourInRowLogic implements BoardLogic {
 	private final int WIN = 4;
 	

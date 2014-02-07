@@ -4,6 +4,11 @@ import player.AbstractPlayerFactory;
 import player.RandomPlayerFactory;
 import game.*;
 
+/**
+ * Main class of four in a row
+ * @author Gil Mizrahi
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) 

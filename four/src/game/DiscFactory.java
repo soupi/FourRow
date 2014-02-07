@@ -3,6 +3,12 @@ package game;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * flyweight singleton factory for discs
+ * @author Gil Mizrahi
+ *
+ */
 public class DiscFactory {
 	
 	List<Disc> discs = new ArrayList<Disc>();

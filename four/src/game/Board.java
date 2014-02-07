@@ -4,6 +4,11 @@ import java.io.Serializable;
 
 import util.Pair;
 
+/**
+ * Model for the board of the game
+ * @author Gil Mizrahi
+ *
+ */
 public final class Board implements Serializable {
 	
 	// private fields
@@ -16,6 +21,11 @@ public final class Board implements Serializable {
 	private Pair<Disc, Integer> lastMove = new Pair<Disc,Integer>(null, -1);
 	private BoardLogic logic;
 	
+	/**
+	 * returns the next empty column in a row
+	 * @param row
+	 * @return the next empty column in a row
+	 */
 	private int getNextEmptyCol(int row)
 	{
 		for (int i = 0; i < matrix[row].length; ++i)
@@ -29,17 +39,27 @@ public final class Board implements Serializable {
 	public Pair<Disc, Integer> getLastMove() { return lastMove; }
 	public int     getWinnerID() { return winnerID; }
 	public boolean isFinished()  { return finished; }
+	
+	/**
+	 * checks if the game is finished
+	 * @return true or false
+	 * @throws Exception when the board is invalid
+	 */
 	public boolean checkFinishConditions() throws Exception 
 	{		
-		if (!isMatrixFull())
+		if (isMatrixFull())
 		{
-			if (checkWinConditions(lastMove))
-			{ finished = true; winnerID = lastMove.first.getPlayerID(); }
+			 finished = true;
 		}
-		else { finished = true; }
-		
+		if (checkWinConditions(lastMove))
+			{ finished = true; winnerID = lastMove.first.getPlayerID(); }
+
 		return finished;
 	}	
+	/**
+	 * checks if the board matrix is full
+	 * @return true or false
+	 */
 	public boolean isMatrixFull()
 	{
 		for (int row = 0; row < matrix.length; ++row)
@@ -48,6 +68,12 @@ public final class Board implements Serializable {
 		
 		return true;
 	}
+	/**
+	 * adds a disc to a row
+	 * @param row to add the disc to
+	 * @param newDisc the new disc
+	 * @return indicates success | failure
+	 */
 	boolean addDisc(int row, Disc newDisc) 
 	{
 		if (row >= matrix.length)
@@ -64,10 +90,22 @@ public final class Board implements Serializable {
 		
 		return true;
 	}
+	/**
+	 * returns the disc in row i and column j
+	 * @param i row
+	 * @param j column
+	 * @return the disc present
+	 */
 	public Disc getDisc(int i, int j)
 	{
 		return matrix[i][j];
 	}
+	/**
+	 * checks if the move answers the winning conditions 
+	 * @param move move to check
+	 * @return true or false
+	 * @throws Exception 
+	 */
 	public boolean checkWinConditions(Pair<Disc, Integer> move) throws Exception
 	{		
 		int row = move.second;

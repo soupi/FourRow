@@ -1,7 +1,16 @@
 package player;
 
+
+/**
+ * defines print() from AbstractView. prints the last move on the screen.
+ * @author Gil Mizrahi
+ *
+ */
 public class LastMoveView extends AbstractView {
 
+	/**
+	 * prints the last move on the screen.
+	 */
 	@Override
 	public void print() 
 	{

@@ -6,6 +6,11 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * logs game events and time taken for every play to make a move.
+ * @author Gil Mizrahi
+ *
+ */
 public aspect LoggerAspect {
 	
 	private long startTime = 0;
@@ -17,6 +22,7 @@ public aspect LoggerAspect {
 		call (void game.Game.makeMove(..)); 
 	pointcut logGame() : call (public int game.GameManager.loop(..));
 	
+	// ---------------------------------------------------------------------------
     before(game.Game game) : logMoveTimeElapsed(game) {
     	 startTime = System.nanoTime();
     }
@@ -26,16 +32,29 @@ public aspect LoggerAspect {
     	long estimatedTime = (System.nanoTime() - startTime)/1000;
     	writers.get(game.getID()).println("Move decided after: " + estimatedTime + " milliseconds.");
     }
-    
+	// ---------------------------------------------------------------------------
+
+	// ---------------------------------------------------------------------------
     before(game.Game game) : logBoardAndMoves(game) {
     	if (writers.get(game.getID()) == null) return;
     	PrintWriter writer = writers.get(game.getID());
     	game.Board board = game.getBoard();
     	printBoard(writer, board);
     }
-    
-    void printBoard(PrintWriter writer, game.Board board)
-    {
+
+   after(game.Game game) : logBoardAndMoves(game)
+   {
+	   if (writers.get(game.getID()) == null) return;
+	   writers.get(game.getID()).println("Last Move was by player " + game.getLastMove().first.getPlayerID() + 
+			   " in row " + (game.getLastMove().second + 1));
+   }
+   after(game.Game game) throwing(Exception e) : logBoardAndMoves(game)
+   {
+	  if (writers.get(game.getID()) == null) return;
+	  writers.get(game.getID()).println("Exception thrown: " + e.getMessage());
+   }
+   void printBoard(PrintWriter writer, game.Board board)
+   {
 		for (int i = 0; i < board.ROWS; ++i)
 		{
 			for (int k = 0; k < board.COLS; ++k)
@@ -51,35 +70,25 @@ public aspect LoggerAspect {
 		for (int k = 0; k < board.COLS; ++k)
 			writer.print("--");
 		writer.println("");
-    }
+   }
+   // ---------------------------------------------------------------------------
 
-   after(game.Game game) : logBoardAndMoves(game)
-   {
-	   if (writers.get(game.getID()) == null) return;
-	   writers.get(game.getID()).println("Last Move was by player " + game.getLastMove().first.getPlayerID() + 
-			   " in row " + (game.getLastMove().second + 1));
-   }
-   after(game.Game game) throwing(Exception e) : logBoardAndMoves(game)
-   {
-	  if (writers.get(game.getID()) == null) return;
-	  writers.get(game.getID()).println("Exception thrown: " + e.getMessage());
-   }
-   
-    
-    before() : logGame() {
+   // ---------------------------------------------------------------------------
+    before() : logGame() 
+    {
     	long id = ((game.GameManager)thisJoinPoint.getTarget()).getID();
     	PrintWriter writer = null;
 		try {
 			writer = new PrintWriter("log" + id + ".txt", "UTF-8");
 		} catch (FileNotFoundException | UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	writers.put(id, writer);
     	if (writer == null) return;
     	writers.get(id).println("Game number " + id + " has started");
     }
-    after() returning (int winner) : logGame() {
+    after() returning (int winner) : logGame() 
+    {
     	game.GameManager manager = ((game.GameManager)thisJoinPoint.getTarget());
     	long id = manager.getID();
     	if (writers.get(id) == null) 
@@ -100,4 +109,5 @@ public aspect LoggerAspect {
 		writers.get(id).close();
 		writers.remove(id);
     }
+    // ---------------------------------------------------------------------------
 } 

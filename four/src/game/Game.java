@@ -11,7 +11,7 @@ import util.Pair;
 /**
  * The Game is responsible for controlling the game. it selects the current player to play and changes the board.
  * Game extends Observable and notify its observers when the board has changed.
- * @author suppi
+ * @author Gil Mizrahi
  *
  */
 public class Game extends Observable 
@@ -36,6 +36,10 @@ public class Game extends Observable
 		for (IPlayer player : players)
 			this.players.add(player);
 	}
+	/**
+	 * queue of players
+	 * @return the players' queue
+	 */
 	public Queue<IPlayer> getPlayersQueue() 
 	{ 
 		Queue<IPlayer> queue = new LinkedList<IPlayer>();
@@ -48,7 +52,11 @@ public class Game extends Observable
 	public int      getWinner() { return board.getWinnerID(); }
 	public boolean  isFinished() { return board.isFinished(); }
 	public Board    getBoard() { return board; }
-	void            makeMove() throws Exception 
+	/**
+	 * makes a new move in the game
+	 * @throws Exception when there aren't enough players of the game is already finished
+	 */
+	void makeMove() throws Exception 
 	{ 
 		if (players.size() < 1)
 			throw new Exception("insufficient number of players");
@@ -62,6 +70,7 @@ public class Game extends Observable
 		
 		board.checkFinishConditions();
 		
+		// declare update
 	    setChanged();
 	    notifyObservers(board);
 	}

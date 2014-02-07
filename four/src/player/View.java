@@ -4,7 +4,13 @@ import java.util.Observer;
 
 import game.Game;
 
-public interface View extends Observer {
+/**
+ * View for the game
+ * @author Gil Mizrahi
+ *
+ */
+public interface View extends Observer 
+{
 	void print();
 	game.Board getBoard();
 	Game getGame();

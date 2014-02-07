@@ -12,7 +12,7 @@ Game number 0 has started
 --------------
 |              
 --------------
-Move decided after: 122 milliseconds.
+Move decided after: 111 milliseconds.
 Last Move was by player 0 in row 2
 --------------
 |              
@@ -28,124 +28,229 @@ Last Move was by player 0 in row 2
 |              
 --------------
 Move decided after: 55 milliseconds.
-Last Move was by player 1 in row 1
---------------
-|1             
---------------
-|0             
---------------
-|              
---------------
-|              
---------------
-|              
---------------
-|              
---------------
-Move decided after: 49 milliseconds.
-Last Move was by player 0 in row 5
---------------
-|1             
---------------
-|0             
---------------
-|              
---------------
-|              
---------------
-|0             
---------------
-|              
---------------
-Move decided after: 49 milliseconds.
 Last Move was by player 1 in row 6
 --------------
+|              
+--------------
+|0             
+--------------
+|              
+--------------
+|              
+--------------
+|              
+--------------
+|1             
+--------------
+Move decided after: 50 milliseconds.
+Last Move was by player 0 in row 1
+--------------
+|0             
+--------------
+|0             
+--------------
+|              
+--------------
+|              
+--------------
+|              
+--------------
+|1             
+--------------
+Move decided after: 49 milliseconds.
+Last Move was by player 1 in row 3
+--------------
+|0             
+--------------
+|0             
+--------------
+|1             
+--------------
+|              
+--------------
+|              
+--------------
+|1             
+--------------
+Move decided after: 50 milliseconds.
+Last Move was by player 0 in row 4
+--------------
+|0             
+--------------
+|0             
+--------------
 |1             
 --------------
 |0             
 --------------
 |              
 --------------
-|              
+|1             
+--------------
+Move decided after: 49 milliseconds.
+Last Move was by player 1 in row 5
 --------------
 |0             
+--------------
+|0             
+--------------
+|1             
+--------------
+|0             
+--------------
+|1             
+--------------
+|1             
+--------------
+Move decided after: 48 milliseconds.
+Last Move was by player 0 in row 1
+--------------
+|0 0           
+--------------
+|0             
+--------------
+|1             
+--------------
+|0             
+--------------
+|1             
+--------------
+|1             
+--------------
+Move decided after: 49 milliseconds.
+Last Move was by player 1 in row 3
+--------------
+|0 0           
+--------------
+|0             
+--------------
+|1 1           
+--------------
+|0             
+--------------
+|1             
+--------------
+|1             
+--------------
+Move decided after: 50 milliseconds.
+Last Move was by player 0 in row 4
+--------------
+|0 0           
+--------------
+|0             
+--------------
+|1 1           
+--------------
+|0 0           
+--------------
+|1             
 --------------
 |1             
 --------------
 Move decided after: 51 milliseconds.
+Last Move was by player 1 in row 2
+--------------
+|0 0           
+--------------
+|0 1           
+--------------
+|1 1           
+--------------
+|0 0           
+--------------
+|1             
+--------------
+|1             
+--------------
+Move decided after: 49 milliseconds.
 Last Move was by player 0 in row 6
 --------------
-|1             
---------------
-|0             
---------------
-|              
---------------
-|              
---------------
-|0             
---------------
-|1 0           
---------------
-Move decided after: 54 milliseconds.
-Last Move was by player 1 in row 5
---------------
-|1             
---------------
-|0             
---------------
-|              
---------------
-|              
+|0 0           
 --------------
 |0 1           
---------------
-|1 0           
---------------
-Move decided after: 54 milliseconds.
-Last Move was by player 0 in row 3
---------------
-|1             
---------------
-|0             
---------------
-|0             
---------------
-|              
---------------
-|0 1           
---------------
-|1 0           
---------------
-Move decided after: 54 milliseconds.
-Last Move was by player 1 in row 1
 --------------
 |1 1           
 --------------
-|0             
+|0 0           
 --------------
-|0             
---------------
-|              
---------------
-|0 1           
+|1             
 --------------
 |1 0           
 --------------
-Move decided after: 53 milliseconds.
-Last Move was by player 0 in row 4
+Move decided after: 60 milliseconds.
+Last Move was by player 1 in row 2
+--------------
+|0 0           
+--------------
+|0 1 1         
 --------------
 |1 1           
 --------------
-|0             
+|0 0           
 --------------
-|0             
+|1             
 --------------
-|0             
+|1 0           
 --------------
-|0 1           
+Move decided after: 49 milliseconds.
+Last Move was by player 0 in row 2
+--------------
+|0 0           
+--------------
+|0 1 1 0       
+--------------
+|1 1           
+--------------
+|0 0           
+--------------
+|1             
+--------------
+|1 0           
+--------------
+Move decided after: 49 milliseconds.
+Last Move was by player 1 in row 3
+--------------
+|0 0           
+--------------
+|0 1 1 0       
+--------------
+|1 1 1         
+--------------
+|0 0           
+--------------
+|1             
+--------------
+|1 0           
+--------------
+Move decided after: 74 milliseconds.
+Last Move was by player 0 in row 2
+--------------
+|0 0           
+--------------
+|0 1 1 0 0     
+--------------
+|1 1 1         
+--------------
+|0 0           
+--------------
+|1             
+--------------
+|1 0           
+--------------
+Move decided after: 651 milliseconds.
+Last Move was by player 1 in row 3
+--------------
+|0 0           
+--------------
+|0 1 1 0 0     
+--------------
+|1 1 1 1       
+--------------
+|0 0           
+--------------
+|1             
 --------------
 |1 0           
 --------------
 Game number 0 has finished with the result: 
-player number 0 won.
+player number 1 won.

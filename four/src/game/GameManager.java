@@ -7,8 +7,8 @@ import player.IPlayer;
 
 
 /**
- * The GameManager creates a game objects and loops through until the game is finished
- * @author suppi
+ * The GameManager creates a game object and loops through until the game is finished
+ * @author Gil Mizrahi
  *
  */
 public final class GameManager {
@@ -58,14 +58,6 @@ public final class GameManager {
 			try { game.makeMove(); }
 			catch (Exception e) { System.err.println("error while calling game.makeMove(): " + e.toString()); break; }
 		
-		/* -------- */
-		for (int i = 0; i < game.getBoard().ROWS; ++i)
-		{
-			for (int j = 0; j < game.getBoard().COLS; ++j)
-				System.out.print(game.getBoard().getDisc(i, j) + " ");
-			System.out.println("");
-		}
-		/* ---------*/
 		return game.getWinner();
 	}
 	public long getID() { return game.getID(); }
