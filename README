@@ -1,11 +1,4 @@
+Four in a row
+=============
 
-Design:
-
-1. The design pattern I chose to use in order to fulfill this requirement is the "Observer" pattern. there is one Board object - the model of the game board and the subject and many object which implement the View interface, those are the observers. each time the board change the controller (Game object) will signal the observers that the board has changed and each will present the board however it likes.
-
-2. The design pattern I chose to use in order to fulfill this requirement is the "Strategy" pattern. each Player has an object that implement the Interface PlayerStrategy and which has a makeMove function that decides how the player should move. it is possible to replace this object at any given moment, even at runtime, without altering the Player class.
-
-3. The "Decorator" design pattern fulfills this requirement well. we Wrap a View object with wrappers that add certain decoration to the object.
-
-4. I chose to use the "Flyweight" and "Singleton" to help me to fulfill this requirement. Since all Discs are immutable we can cache them in a class which will distribute the simillar Discs while only creating one instance of each unique Disc.
-
+A too complicated oop implementation
